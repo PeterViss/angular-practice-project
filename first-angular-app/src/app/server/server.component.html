@@ -1,1 +1,12 @@
-<p>Server with ID {{ serverId }} is {{ getServerStatus() }}</p>
+<!-- ng style is an ATTRIBUTE DIRECTIVE that is calling on a function called getColor(). Dynamically assigns a style -->
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ online: serverStatus === 'online' }"
+>
+  Server with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
+<button (click)="toggleDisplay()">display details</button>
+<p *ngIf="display">
+  I really like green eggs and ham said Sam I am. I can eat them here, I can eat
+  them there, I can eat them anywhere!
+</p>
